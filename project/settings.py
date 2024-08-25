@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-##)o$prvonj&4t9d(tmv-res8s-8sr%&)qiinf)ers+#rd51jy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
+    # 'corsheaders',
 ]
 
 # REST_FRAMEWORK={
@@ -57,7 +58,18 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #My middleware
+    # 'corsheaders.middleware.CorsMiddleware',
+    # 'django.middleware.common.CommonMiddleware',
 ]
+
+#For CORS
+# CORS_ALLOWED_ORIGINS = [
+#         "https://example.com",
+#         "https://sub.example.com",
+#         "http://localhost:8080",
+#         "http://127.0.0.1:9000"
+#     ]
 
 ROOT_URLCONF = 'project.urls'
 
